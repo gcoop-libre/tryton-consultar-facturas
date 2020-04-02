@@ -1,0 +1,62 @@
+{%- extends "base.html" %}
+
+{# Loads some of the macros included with Flask-Bootstrap. We are using the
+   utils module here to automatically render Flask's flashed messages in a
+   bootstrap friendly manner #}
+{% import "bootstrap/utils.html" as utils %}
+
+{% block content %}
+  <div class="container">
+  {%- with messages = get_flashed_messages(with_categories=True) %}
+  {%- if messages %}
+    <div class="row">
+      <div class="col-sm-12">
+        {{utils.flashed_messages(messages)}}
+      </div>
+    </div>
+  {%- endif %}
+  {%- endwith %}
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>{{ nombre }}</h1>
+
+      <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Comprobantes - Últimos 13 items</div>
+        <!-- Table -->
+        <table class="table">
+          <tr>
+            <th>Fecha</th>
+            <th>Tipo de comprobante</th>
+            <th>Número</th>
+            <th>Importe</th>
+            <th>Descargar</th>
+          </tr>
+          {% for invoice in invoices %}
+          <tr>
+            <td>
+              {{ invoice.invoice_date }}
+            </td>
+            <td>
+              {{ invoice.invoice_type }}
+            </td>
+            <td>
+              {{ invoice.number }}
+            </td>
+            <td>
+              {{ invoice.total_amount }}
+            </td>
+            <td>
+              <form action="{{ invoice.href }}" method="post" target="_blank">
+                <button type="submit"><span class="glyphicon glyphicon-save"></span></button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+      <a href="{{ url_for('consulta.index') }}" target="_self" class="btn btn-primary">Salir</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

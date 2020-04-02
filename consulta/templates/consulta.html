@@ -1,0 +1,36 @@
+{%- extends "base.html" %}
+
+{# Loads some of the macros included with Flask-Bootstrap. We are using the
+   utils module here to automatically render Flask's flashed messages in a
+   bootstrap friendly manner #}
+{% import "bootstrap/utils.html" as utils %}
+
+{% block content %}
+  <div class="container" role="main">
+    {%- with messages = get_flashed_messages(with_categories=True) %}
+    {%- if messages %}
+    <div class="row">
+      <div class="col-md-12">
+        {{utils.flashed_messages(messages)}}
+      </div>
+    </div>
+    {%- endif %}
+    {%- endwith %}
+    <div class="header row">
+      <div class="col-md-12 jumbotron">
+        <form action={{ url_for('consulta.index') }} method="post">
+          {{ form.hidden_tag() }}
+          <div class="form-group row">
+            {{ form.nro_cliente.label }} {{ form.nro_cliente(class_="form-control") }}
+          </div>
+          <div class="form-group row">
+            {{ form.identificador.label }} {{ form.identificador(class_="form-control") }}
+          </div>
+          <div class="form-group row">
+            <input type="submit" value="Consultar" class='btn btn-primary pull-right'>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
