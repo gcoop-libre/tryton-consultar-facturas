@@ -63,8 +63,6 @@ dependency_links = [
         % (major_version, minor_version, major_version, minor_version),
     'https://github.com/tryton-ar/payment_collect/tarball/%s.%s#egg=trytonar_payment_collect-%s.%s' \
         % (major_version, minor_version, major_version, minor_version),
-    'https://gitlab.com/gcoop-libre/payment_collect_fastour/tree/%s.%s' % (
-        major_version, minor_version),
     'https://github.com/reingart/pyafipws/tarball/py3k#egg=pyafipws',
     'https://github.com/pysimplesoap/pysimplesoap/tarball/stable_py3k#egg=pysimplesoap',
     ]
