@@ -54,6 +54,7 @@ requires.append('Flask-Bootstrap')
 requires.append('flask-tryton')
 requires.append('flask-WTF')
 requires.append('click>=5.1')
+requires.append('flask-compress')
 
 dependency_links = [
     'https://github.com/tryton-ar/party_ar/tarball/%s.%s#egg=trytonar_party_ar-%s.%s' \

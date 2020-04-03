@@ -1,0 +1,7 @@
+TESTING=False
+DEBUG=False
+TRYTON_DATABASE = 'consulta_'
+# TRYTON_CONFIG = ''
+# TRYTON_USER = '1'
+SQLALCHEMY_DATABASE_URI = 'sqlite://'
+SESSION_TYPE = 'sqlalchemy'

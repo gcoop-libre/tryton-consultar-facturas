@@ -15,7 +15,7 @@ class BaseConfig(object):
     LOGGING_LEVEL = logging.DEBUG
     COMPRESS_MIMETYPES = ['text/html', 'text/css', 'text/xml', \
 'application/json', 'application/javascript']
-    COMPRESS_LEVEL = 6
+    COMPRESS_LEVEL = 8
     COMPRESS_MIN_SIZE = 500
     BOOTSTRAP_SERVE_LOCAL = True
     TRYTON_DATABASE = ''
