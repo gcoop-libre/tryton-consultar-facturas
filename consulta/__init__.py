@@ -4,6 +4,8 @@ from flask_bootstrap import Bootstrap
 from flask_tryton import Tryton
 from .utils import get_instance_folder_path
 from consulta.config import configure_app
+from flask_sessionstore import Session
+from flask_session_captcha import FlaskSessionCaptcha
 #import logging
 #from logging.handlers import RotatingFileHandler
 #from werkzeug.contrib.fixers import ProxyFix
@@ -13,6 +15,8 @@ app = Flask(__name__, instance_path=get_instance_folder_path(),
 configure_app(app)
 Bootstrap(app)
 tryton = Tryton(app)
+Session(app)
+captcha = FlaskSessionCaptcha(app)
 #app.wsgi_app = ProxyFix(app.wsgi_app)
 
 # register blueprints

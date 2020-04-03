@@ -27,6 +27,11 @@
             {{ form.identificador.label }} {{ form.identificador(class_="form-control") }}
           </div>
           <div class="form-group row">
+            {{ form.captcha.label }}
+            <div> {{ captcha() }} </div>
+            {{ form.captcha(class_="form-control") }}
+          </div>
+          <div class="form-group row">
             <input type="submit" value="Consultar" class='btn btn-primary pull-right'>
           </div>
         </form>

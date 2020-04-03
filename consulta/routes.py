@@ -6,6 +6,7 @@ from flask import Blueprint, render_template, request, redirect, \
 from .forms import ConsultaForm
 from . import tryton
 from . import app
+from . import captcha
 from .invoices import consultar_facturas, report
 
 consulta = Blueprint('consulta', __name__, url_prefix='')
@@ -22,7 +23,7 @@ def index():
 
     if request.method == 'POST':
         #flash('Debido al incremento en los costos, nos vemos en la obligacion de realizar una adecuacion en los abonos de los servicios a partir de la facturacion de MAYO 2019.', 'info')
-        if form.validate() == False:
+        if not form.validate():
             flash_errors(form)
         else:
             try:

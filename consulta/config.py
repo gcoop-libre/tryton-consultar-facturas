@@ -20,7 +20,10 @@ class BaseConfig(object):
     TRYTON_DATABASE = ''
     TRYTOND_CONFIG = '/opt/trytond/trytond.conf'
     TRYTON_USER = '1'
-
+    CAPTCHA_ENABLE = True
+    CAPTCHA_LENGTH = 5
+    CAPTCHA_WIDTH = 160
+    CAPTCHA_HEIGHT = 60
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
