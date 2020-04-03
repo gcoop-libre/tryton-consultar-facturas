@@ -1,5 +1,5 @@
-#! -*- coding: utf8 -*-
-# invoices.py
+# The COPYRIGHT file at the top level of this repository contains
+# the full copyright notices and license terms.
 import ssl
 import mimetypes
 import io

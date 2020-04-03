@@ -1,4 +1,5 @@
-# subscription/__init__.py
+# The COPYRIGHT file at the top level of this repository contains
+# the full copyright notices and license terms.
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flask_tryton import Tryton

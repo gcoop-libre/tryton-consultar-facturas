@@ -1,5 +1,6 @@
-#!/usr/bin/env python2
-# -*- encoding: utf-8 -*-
+#!/usr/bin/env python3
+# The COPYRIGHT file at the top level of this repository contains
+# the full copyright notices and license terms.
 import os
 
 def get_app_base_path():
