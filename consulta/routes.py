@@ -5,6 +5,7 @@ from flask import Blueprint, render_template, request, redirect, \
         flash, url_for
 from .forms import ConsultaForm
 from . import tryton
+from . import csrf
 from . import app
 from . import captcha
 from .invoices import consultar_facturas, report

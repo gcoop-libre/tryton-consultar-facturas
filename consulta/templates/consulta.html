@@ -21,7 +21,7 @@
     <div class="header row">
       <div class="col-md-12 jumbotron">
         <form action={{ url_for('consulta.index') }} method="post">
-          {{ form.hidden_tag() }}
+          {{ form.csrf_token }}
           <div class="form-group row">
             {{ form.nro_cliente.label }} {{ form.nro_cliente(class_="form-control") }}
           </div>
